@@ -1,1 +1,40 @@
-{     "devDependencies": {         "mongo-watch": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-mongo-watch",     "homepage": "https://github.com/npmtest/node-npmtest-mongo-watch",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-mongo-watch.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### test coverage for  [mongo-watch (v0.2.8)](http://github.com/TorchlightSoftware/mongo-watch)  [![npm package](https://img.shields.io/npm/v/npmtest-mongo-watch.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-mongo-watch) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-mongo-watch.svg)](https://travis-ci.org/npmtest/node-npmtest-mongo-watch)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "mongo-watch": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-mongo-watch",
+    "keywords": [
+        "coverage",
+        "test",
+        "mongo-watch"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_mongo_watch.js",
+    "name": "npmtest-mongo-watch",
+    "nameAlias": "npmtest_mongo_watch",
+    "nameOriginal": "npmtest-mongo-watch",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-mongo-watch.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
